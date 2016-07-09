@@ -1,35 +1,37 @@
 package kafka;
 
-import kafka.consumer.KafkaStream;
 import kafka.util.ConsumerUtil;
-import kafka.util.ReaderThread;
+import org.apache.kafka.clients.consumer.KafkaConsumer;
+import org.apache.kafka.common.TopicPartition;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 /**
  * Created by iuan on 2016/7/9.
  */
 public class TopicReader {
-    private int threadNum = 10;
     private String group = "";
     private String topic = "";
+    private int batch = 1;
 
-    public TopicReader(int threadNum, String group, String topic) {
-        this.threadNum = threadNum;
+    public TopicReader(String group, String topic, int batch) {
         this.group = group;
         this.topic = topic;
+        this.batch = batch;
     }
 
-    private void readTopic() {
-        ExecutorService executor = Executors.newFixedThreadPool(threadNum);
-        List<KafkaStream<String, String>> streams = ConsumerUtil.getStream(group, topic, threadNum);
+    public void readTopic() {
+        List<String> list = new ArrayList<String>();
+        list.add(topic);
+        KafkaConsumer<String, String> consumer = ConsumerUtil.getConsumer(group);
+        consumer.subscribe(list);
+        ReaderThread readerThread = new ReaderThread(consumer, 1);
+        readerThread.run();
+    }
 
-        int index = 0;
-        for (final KafkaStream<String, String> stream : streams) {
-            executor.submit(new ReaderThread(stream, index));
-            index++;
-        }
+    public static void main(String[] args) {
+        TopicReader topicReader = new TopicReader("ssss1", "test", 1);
+        topicReader.readTopic();
     }
 }
