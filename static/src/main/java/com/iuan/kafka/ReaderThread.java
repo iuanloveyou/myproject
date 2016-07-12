@@ -1,13 +1,8 @@
 package com.iuan.kafka;
 
-import kafka.consumer.ConsumerIterator;
-import kafka.consumer.KafkaStream;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by iuan on 2016/7/9.
