@@ -1,4 +1,4 @@
-package redis.util;
+package com.iuan.redis.util;
 
 /**
  * Created by iuan on 2016/7/8.

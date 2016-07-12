@@ -1,4 +1,4 @@
-package redis.util;
+package com.iuan.redis.util;
 
 import redis.clients.jedis.*;
 

@@ -2,7 +2,7 @@ package redis;
 
 
 import junit.framework.TestCase;
-import redis.util.JedisUtil;
+import com.iuan.redis.util.JedisUtil;
 import redis.clients.jedis.ShardedJedis;
 import redis.clients.jedis.ShardedJedisPipeline;
 

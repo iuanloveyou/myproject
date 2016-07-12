@@ -1,8 +1,7 @@
-package kafka;
+package com.iuan.kafka;
 
-import kafka.util.ConsumerUtil;
+import com.iuan.kafka.util.ConsumerUtil;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
-import org.apache.kafka.common.TopicPartition;
 
 import java.util.ArrayList;
 import java.util.List;

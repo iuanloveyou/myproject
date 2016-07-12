@@ -1,6 +1,5 @@
-package kafka.util;
+package com.iuan.kafka.util;
 
-import kafka.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 
 import java.util.*;

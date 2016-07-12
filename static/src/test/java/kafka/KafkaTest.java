@@ -1,13 +1,8 @@
 package kafka;
 
-import com.sun.org.apache.xpath.internal.SourceTree;
+import com.iuan.kafka.TopicReader;
 import junit.framework.TestCase;
-import kafka.consumer.ConsumerIterator;
-import kafka.consumer.KafkaStream;
-import kafka.util.ConsumerUtil;
-import kafka.util.ProducerUtil;
-
-import java.util.List;
+import com.iuan.kafka.util.ProducerUtil;
 
 /**
  * Created by iuan on 2016/7/9.

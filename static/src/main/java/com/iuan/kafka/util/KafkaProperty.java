@@ -1,4 +1,4 @@
-package kafka.util;
+package com.iuan.kafka.util;
 
 /**
  * Created by iuan on 2016/7/9.
